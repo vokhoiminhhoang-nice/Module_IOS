@@ -11,7 +11,12 @@
 // ============================================================
 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
-var obj = JSON.parse($response.body);
+var obj = {};
+try {
+    obj = JSON.parse($response.body);
+} catch (e) {
+    obj = {};
+}
 
 if (true) {
     obj.Attention = "chào mừng đến locket gold của Minh Hoàng";
