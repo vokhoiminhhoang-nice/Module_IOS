@@ -20,6 +20,7 @@ try {
 
 if (true) {
     obj.Attention = "chào mừng đến locket gold của Minh Hoàng";
+    obj.state = "UPDATE_AVAILABLE";
     obj.entries = obj.entries || {};
 
     // ============================================================
@@ -30,6 +31,16 @@ if (true) {
             app_icon_picker: "enabled",
             camera_roll: "enabled",
             camera_theme: "enabled",
+            camera_filters: "enabled",
+            camera_filter: "enabled",
+            filters: "enabled",
+            filter: "enabled",
+            face_filters: "enabled",
+            custom_filters: "enabled",
+            camera_filters_v2: "enabled",
+            camera_filter_sheet: "enabled",
+            filter_picker: "enabled",
+            ar_filters: "enabled",
             locket_views: "enabled",
             long_captions: "enabled",
             longer_video: "enabled",
@@ -51,26 +62,31 @@ if (true) {
             streak_recovery: "enabled"
         }),
         upsell_features: JSON.stringify({
-            app_icon_picker: true,
-            camera_roll: true,
-            camera_theme: true,
-            locket_views: true,
-            remove_ads: true,
-            custom_widget_frames: true,
-            longer_video: true,
-            high_quality_video: true,
-            extended_video: true,
-            unlimited_friends: true,
-            profile_badge: true,
-            streak_recovery: true
+            app_icon_picker: false,
+            camera_roll: false,
+            camera_theme: false,
+            camera_filters: false,
+            camera_filter: false,
+            filters: false,
+            custom_filters: false,
+            face_filters: false,
+            locket_views: false,
+            remove_ads: false,
+            custom_widget_frames: false,
+            longer_video: false,
+            high_quality_video: false,
+            extended_video: false,
+            unlimited_friends: false,
+            profile_badge: false,
+            streak_recovery: false
         }),
         paywall_presentation_config: JSON.stringify({
-            uid: "paywall_testflight",
+            uid: "",
             onboarding: false,
             after_sent_moment: false,
             on_foreground: false,
-            interval: 2592000,
-            profile_banner: true
+            interval: 999999999,
+            profile_banner: false
         }),
         feature_discovery_popup_config: JSON.stringify({
             tag: "LOCKET GOLD ELITE",
@@ -147,7 +163,14 @@ if (true) {
             high_resolution: true,
             hdr_video: true,
             fps_60_enabled: true,
-            stabilization_mode: "cinematicExtended"
+            stabilization_mode: "cinematicExtended",
+            filters: true,
+            camera_filters: true,
+            show_filter_button: true,
+            allows_custom_filters: true,
+            filter_capture_enabled: true,
+            filters_require_gold: false,
+            allow_filter_capture: true
         }),
         camera_roll: JSON.stringify({
             gold_max_duration: 60.0,
@@ -172,10 +195,17 @@ if (true) {
             widget_looping_mode: "always"
         }),
         camera_filter_config: JSON.stringify({
+            enabled: true,
             allows_custom_filters: true,
             show_filter_button: true,
+            filter_button_visible: true,
             sheet_enabled: true,
-            open_sheet_immediately: true,
+            picker_enabled: true,
+            filters_enabled: true,
+            open_sheet_immediately: false,
+            all_filters_unlocked: true,
+            requires_gold: false,
+            is_gold_required: false,
             sheet_filters: [
                 { title: { en: "Goofy" }, filter_ids: ["okay_wig", "influencer", "looks_maxxing", "toothless", "bye_brows"] },
                 { title: { en: "Looks" }, filter_ids: ["bowling_ball", "blonde_bleached", "beard", "bob_cut", "buns", "tatted", "mohawk", "braces", "bye_brows"] },
@@ -194,6 +224,30 @@ if (true) {
                 "lucky_face", "sweet_hearts", "elf_cutout", "santa_cutout", "frosty"
             ]
         }),
+        filters_require_gold: "false",
+        camera_filters_require_gold: "false",
+        camera_filter_requires_gold: "false",
+        all_camera_filters_unlocked: "true",
+        camera_filters_locked: "false",
+        paywall_on_filter_capture: "false",
+        camera_filters_enabled: "true",
+        camera_filter_enabled: "true",
+        camera_filters: "true",
+        camera_filter: "true",
+        filters_enabled: "true",
+        filter_enabled: "true",
+        face_filters_enabled: "true",
+        show_camera_filter_button: "true",
+        camera_filter_button_enabled: "true",
+        camera_filter_sheet_enabled: "true",
+        camera_filters_sheet_enabled: "true",
+        custom_filters_enabled: "true",
+        camera_filters_v2: "true",
+        camera_filters_v2_enabled: "true",
+        camera_filter_v2: "true",
+        camera_theme_enabled: "true",
+        camera_themes_enabled: "true",
+        show_filters_on_cam: "true",
         camera_roll_preview_enabled: "true",
         camera_roll_video_enabled: "true",
         camera_roll_video_upload_enabled: "true",

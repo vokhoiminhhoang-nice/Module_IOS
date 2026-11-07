@@ -39,15 +39,32 @@ var mhoang07 = {
 var locketGold = {
   grace_period_expires_date: null,
   purchase_date: "2007-07-06T10:10:14Z",
+  original_purchase_date: "2007-07-06T10:10:15Z",
   product_identifier: "locket_1600_1y",
-  expires_date: "9999-01-09T10:10:14Z"
+  expires_date: "9999-01-09T10:10:14Z",
+  ownership_type: "PURCHASED",
+  store: "app_store",
+  is_sandbox: false
 };
 
-// Luôn kích hoạt cả Gold và pro để đảm bảo mọi phiên bản Locket đều ăn 100%
+// Luôn kích hoạt cả Gold, pro, filters để đảm bảo mọi phiên bản Locket đều ăn 100%
 obj.subscriber.entitlements["Gold"] = locketGold;
+obj.subscriber.entitlements["gold"] = locketGold;
 obj.subscriber.entitlements["pro"] = locketGold;
+obj.subscriber.entitlements["Pro"] = locketGold;
+obj.subscriber.entitlements["filters"] = locketGold;
+obj.subscriber.entitlements["Filters"] = locketGold;
+obj.subscriber.entitlements["camera_filters"] = locketGold;
+obj.subscriber.entitlements["locket_gold"] = locketGold;
+obj.subscriber.entitlements["vip"] = locketGold;
+
 obj.subscriber.subscriptions["locket_1600_1y"] = mhoang07;
 obj.subscriber.subscriptions["Gold"] = mhoang07;
+obj.subscriber.subscriptions["gold"] = mhoang07;
+obj.subscriber.subscriptions["pro"] = mhoang07;
+obj.subscriber.subscriptions["locket_gold"] = mhoang07;
+obj.subscriber.subscriptions["locket_gold_yearly"] = mhoang07;
+obj.subscriber.subscriptions["locket_gold_monthly"] = mhoang07;
 
 $done({
   body: JSON.stringify(obj)
