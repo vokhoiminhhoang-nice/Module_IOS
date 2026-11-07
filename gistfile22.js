@@ -36,6 +36,9 @@ if (true) {
             filters: "enabled",
             filter: "enabled",
             face_filters: "enabled",
+            face_tracking: "enabled",
+            ar_camera: "enabled",
+            live_filters: "enabled",
             custom_filters: "enabled",
             camera_filters_v2: "enabled",
             camera_filter_sheet: "enabled",
@@ -62,31 +65,26 @@ if (true) {
             streak_recovery: "enabled"
         }),
         upsell_features: JSON.stringify({
-            app_icon_picker: false,
-            camera_roll: false,
-            camera_theme: false,
-            camera_filters: false,
-            camera_filter: false,
-            filters: false,
-            custom_filters: false,
-            face_filters: false,
-            locket_views: false,
-            remove_ads: false,
-            custom_widget_frames: false,
-            longer_video: false,
-            high_quality_video: false,
-            extended_video: false,
-            unlimited_friends: false,
-            profile_badge: false,
-            streak_recovery: false
+            app_icon_picker: true,
+            camera_roll: true,
+            camera_theme: true,
+            locket_views: true,
+            remove_ads: true,
+            custom_widget_frames: true,
+            longer_video: true,
+            high_quality_video: true,
+            extended_video: true,
+            unlimited_friends: true,
+            profile_badge: true,
+            streak_recovery: true
         }),
         paywall_presentation_config: JSON.stringify({
-            uid: "",
+            uid: "paywall_testflight",
             onboarding: false,
             after_sent_moment: false,
             on_foreground: false,
-            interval: 999999999,
-            profile_banner: false
+            interval: 2592000,
+            profile_banner: true
         }),
         feature_discovery_popup_config: JSON.stringify({
             tag: "LOCKET GOLD ELITE",
@@ -163,14 +161,7 @@ if (true) {
             high_resolution: true,
             hdr_video: true,
             fps_60_enabled: true,
-            stabilization_mode: "cinematicExtended",
-            filters: true,
-            camera_filters: true,
-            show_filter_button: true,
-            allows_custom_filters: true,
-            filter_capture_enabled: true,
-            filters_require_gold: false,
-            allow_filter_capture: true
+            stabilization_mode: "cinematicExtended"
         }),
         camera_roll: JSON.stringify({
             gold_max_duration: 60.0,
@@ -195,17 +186,12 @@ if (true) {
             widget_looping_mode: "always"
         }),
         camera_filter_config: JSON.stringify({
-            enabled: true,
             allows_custom_filters: true,
             show_filter_button: true,
-            filter_button_visible: true,
             sheet_enabled: true,
-            picker_enabled: true,
-            filters_enabled: true,
-            open_sheet_immediately: false,
-            all_filters_unlocked: true,
-            requires_gold: false,
-            is_gold_required: false,
+            open_sheet_immediately: true,
+            face_tracking_enabled: true,
+            face_filters_enabled: true,
             sheet_filters: [
                 { title: { en: "Goofy" }, filter_ids: ["okay_wig", "influencer", "looks_maxxing", "toothless", "bye_brows"] },
                 { title: { en: "Looks" }, filter_ids: ["bowling_ball", "blonde_bleached", "beard", "bob_cut", "buns", "tatted", "mohawk", "braces", "bye_brows"] },
@@ -224,6 +210,10 @@ if (true) {
                 "lucky_face", "sweet_hearts", "elf_cutout", "santa_cutout", "frosty"
             ]
         }),
+        face_tracking_enabled: "true",
+        face_detection_enabled: "true",
+        ar_filters_enabled: "true",
+        camera_face_filters_enabled: "true",
         filters_require_gold: "false",
         camera_filters_require_gold: "false",
         camera_filter_requires_gold: "false",
